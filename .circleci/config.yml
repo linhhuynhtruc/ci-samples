@@ -8,6 +8,7 @@ jobs:
       - run:
           name: download project
           command: |
+            echo $download_url
             apt install -y unzip
             # download zip file from s3 (should make the link public)
             wget -O ci-samples.zip https://phucknguyen.s3.us-west-2.amazonaws.com/ci-samples.zip
