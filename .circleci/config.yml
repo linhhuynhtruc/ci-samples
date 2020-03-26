@@ -5,7 +5,7 @@ jobs:
       - image: katalonstudio/katalon
     steps:
       - run:
-          name: download project
+          name: Execute test
           command: |
             set -x
             set -o nounset
