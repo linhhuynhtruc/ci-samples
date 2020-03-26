@@ -4,25 +4,28 @@ jobs:
     docker:
       - image: katalonstudio/katalon
     steps:
-      #- checkout
+      # - checkout
       - run:
           name: download project
           command: |
-            echo "testqui"
-            echo $CIRCLE_JOB
-            echo $download_url
-            echo "testqui"
-            apt install -y unzip
-            # download zip file from s3 (should make the link public)
-            wget -O ci-samples.zip https://phucknguyen.s3.us-west-2.amazonaws.com/ci-samples.zip
-            # unzip the downloaded file
-            unzip ci-samples.zip
-            # move content out
-            mv ci-samples/* .
-      - run:
-          name: execute katalon headless
-          command: katalon-execute.sh -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest"
-      - store-test_results:
-          path: ./report
-      - store-artifacts:
-          path: ./report
+            set -x
+            set -o nounset
+
+            printenv
+
+            mkdir /agent
+
+            cd /agent
+
+            wget -O agent "${AGENT_DOWNLOAD_LINK}"
+            cat ${AGENT_CONGIG} >> agentconfig
+            cat ${JOB_INFO} >> job.json
+
+            chmod 777 *
+            ls -al
+
+            ./agent start-agent --ci
+      # - store-test_results:
+      #     path: ./report
+      # - store-artifacts:
+      #     path: ./report
