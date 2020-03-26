@@ -18,7 +18,7 @@ jobs:
             cd /agent
 
             wget -O agent "${AGENT_DOWNLOAD_LINK}"
-            cat ${AGENT_CONGIG} >> agentconfig
+            cat ${AGENT_CONFIG} >> agentconfig
             cat ${JOB_INFO} >> job.json
 
             chmod 777 *
