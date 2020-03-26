@@ -4,7 +4,6 @@ jobs:
     docker:
       - image: katalonstudio/katalon
     steps:
-      # - checkout
       - run:
           name: download project
           command: |
@@ -25,7 +24,3 @@ jobs:
             ls -al
 
             ./agent start-agent --ci
-      # - store-test_results:
-      #     path: ./report
-      # - store-artifacts:
-      #     path: ./report
