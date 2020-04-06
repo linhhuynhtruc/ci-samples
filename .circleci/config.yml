@@ -5,13 +5,10 @@ parameters:
     default: "latest"
   agent-download_link:
     type: string
-    default: "latest"
   job-info:
     type: string
-    default: "latest"
   agen-config:
     type: string
-    default: "latest"
 jobs:
   build:
     docker:
