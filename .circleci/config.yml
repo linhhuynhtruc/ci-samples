@@ -3,11 +3,11 @@ parameters:
   -kre-image-tag:
     type: string
     default: "latest"
-  agent-download_link:
+  agent-download-link:
     type: string
   job-info:
     type: string
-  agen-config:
+  agent-config:
     type: string
 jobs:
   build:
