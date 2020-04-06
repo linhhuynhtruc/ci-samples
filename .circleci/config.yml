@@ -1,22 +1,22 @@
 version: 2.1
 parameters:
-  - kre-image-tag:
-      type: string
-      default: "latest"
-  - agent-download_link:
-      type: string
-  - job-info:
-      type: string
-  - agen-config:
-      type: string
+  -kre-image-tag:
+    type: string
+    default: "latest"
+  agent-download_link:
+    type: string
+  job-info:
+    type: string
+  agen-config:
+    type: string
 jobs:
   build:
     docker:
       - image: katalonstudio/katalon:<< pipeline.parameters.kre-image-tag >>
-    environments:
-      - AGENT_DOWNLOAD_LINK: << pipeline.parameters.agent-download_link >>
-      - JOB_INFO: << pipeline.parameters.job-info >>
-      - AGENT_CONFIG:  << pipeline.parameters.agen-config >>
+    environment:
+      AGENT_DOWNLOAD_LINK: << pipeline.parameters.agent-download_link >>
+      # - JOB_INFO: << pipeline.parameters.job-info >>
+      # - AGENT_CONFIG:  << pipeline.parameters.agen-config >>
     steps:
       - run:
           name: Execute test
