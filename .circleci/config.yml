@@ -21,7 +21,7 @@ jobs:
     environment:
       AGENT_DOWNLOAD_LINK: << pipeline.parameters.agent-download-link >>
       JOB_INFO: << pipeline.parameters.job-info >>
-      AGENT_CONFIG:  << pipeline.parameters.agen-config >>
+      AGENT_CONFIG:  << pipeline.parameters.agent-config >>
     steps:
       - run:
           name: Execute test
