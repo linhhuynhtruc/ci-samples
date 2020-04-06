@@ -17,7 +17,7 @@ jobs:
     docker:
       - image: katalonstudio/katalon:<< pipeline.parameters.kre-image-tag >>
     environment:
-      AGENT_DOWNLOAD_LINK: << pipeline.parameters.agent-download_link >>
+      AGENT_DOWNLOAD_LINK: << pipeline.parameters.agent-download-link >>
       # - JOB_INFO: << pipeline.parameters.job-info >>
       # - AGENT_CONFIG:  << pipeline.parameters.agen-config >>
     steps:
