@@ -1,14 +1,14 @@
 version: 2.1
 parameters:
-  kre-image-tag:
-    type: string
-    default: "latest"
-  agent-download_link:
-    type: string
-  job-info:
-    type: string
-  agen-config:
-    type: string
+  - kre-image-tag:
+      type: string
+      default: "latest"
+  - agent-download_link:
+      type: string
+  - job-info:
+      type: string
+  - agen-config:
+      type: string
 jobs:
   build:
     docker:
