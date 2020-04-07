@@ -14,21 +14,22 @@ version: 2.1
 #     type: string
 #     default: ""
 
+parameters:
+  ks_version:
+    type: string
+    default: "latest"
+  agent_download_link:
+    type: string
+    default: ""
+  job_info:
+    type: string
+    default: ""
+  agent_config:
+    type: string
+    default: ""
+
 jobs:
   build:
-    parameters:
-      ks_version:
-        type: string
-        default: "latest"
-      agent_download_link:
-        type: string
-        default: ""
-      job_info:
-        type: string
-        default: ""
-      agent_config:
-        type: string
-        default: ""
     docker:
       - image: katalonstudio/katalon:<< parameters.ks_version >>
     environment:
