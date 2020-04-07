@@ -2,17 +2,17 @@ version: 2.1
 
 parameters:
   kre-image-tag:
-   type: string
-   default: "latest"
- agent-download-link:
-   type: string
-   default: ""
- job-info:
-   type: string
-   default: ""
- agent-config:
-   type: string
-   default: ""
+    type: string
+    default: "latest"
+  agent-download-link:
+    type: string
+    default: ""
+  job-info:
+    type: string
+    default: ""
+  agent-config:
+    type: string
+    default: ""
 
 jobs:
   build:
