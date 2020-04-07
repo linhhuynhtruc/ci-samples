@@ -30,11 +30,11 @@ jobs:
         type: string
         default: ""
     docker:
-      - image: katalonstudio/katalon:<< parameters.KS_VERSION >>
+      - image: katalonstudio/katalon:<< parameters.ks_version >>
     environment:
-      AGENT_DOWNLOAD_LINK: << parameters.AGENT_DOWNLOAD_LINK >>
-      JOB_INFO: << parameters.JOB_INFO >>
-      AGENT_CONFIG:  << parameters.AGENT_CONFIG >>
+      AGENT_DOWNLOAD_LINK: << parameters.agent_download_link >>
+      JOB_INFO: << parameters.job_info >>
+      AGENT_CONFIG:  << parameters.agent_config >>
     steps:
       - run:
           name: Execute test
