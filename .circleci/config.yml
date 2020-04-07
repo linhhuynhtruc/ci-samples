@@ -17,16 +17,16 @@ version: 2.1
 jobs:
   build:
     parameters:
-      KS_VERSION:
+      ks_version:
         type: string
         default: "latest"
-      AGENT_DOWNLOAD_LINK:
+      agent_download_link:
         type: string
         default: ""
-      JOB_INFO:
+      job_info:
         type: string
         default: ""
-      AGENT_CONFIG:
+      agent_config:
         type: string
         default: ""
     docker:
