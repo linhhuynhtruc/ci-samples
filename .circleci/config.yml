@@ -17,24 +17,24 @@ version: 2.1
 jobs:
   build:
     parameters:
-      kre-image-tag:
+      KS_VERSION:
         type: string
         default: "latest"
-      agent-download-link:
+      AGENT_DOWNLOAD_LINK:
         type: string
         default: ""
-      job-info:
+      JOB_INFO:
         type: string
         default: ""
-      agent-config:
+      AGENT_CONFIG:
         type: string
         default: ""
     docker:
-      - image: katalonstudio/katalon:<< parameters.kre-image-tag >>
+      - image: katalonstudio/katalon:<< parameters.KS_VERSION >>
     environment:
-      AGENT_DOWNLOAD_LINK: << parameters.agent-download-link >>
-      JOB_INFO: << parameters.job-info >>
-      AGENT_CONFIG:  << parameters.agent-config >>
+      AGENT_DOWNLOAD_LINK: << parameters.AGENT_DOWNLOAD_LINK >>
+      JOB_INFO: << parameters.JOB_INFO >>
+      AGENT_CONFIG:  << parameters.AGENT_CONFIG >>
     steps:
       - run:
           name: Execute test
