@@ -31,11 +31,11 @@ parameters:
 jobs:
   build:
     docker:
-      - image: katalonstudio/katalon:<< parameters.ks_version >>
+      - image: katalonstudio/katalon:<< pipeline.parameters.ks_version >>
     environment:
-      AGENT_DOWNLOAD_LINK: << parameters.agent_download_link >>
-      JOB_INFO: << parameters.job_info >>
-      AGENT_CONFIG:  << parameters.agent_config >>
+      AGENT_DOWNLOAD_LINK: << pipeline.parameters.agent_download_link >>
+      JOB_INFO: << pipeline.parameters.job_info >>
+      AGENT_CONFIG:  << pipeline.parameters.agent_config >>
     steps:
       - run:
           name: Execute test
