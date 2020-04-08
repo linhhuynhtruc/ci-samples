@@ -1,7 +1,7 @@
 version: 2.1
 
 parameters:
-  kre-image-tag:
+ kre-image-tag:
     type: string
     default: "latest"
   agent-download-link:
