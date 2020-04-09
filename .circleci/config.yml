@@ -24,7 +24,7 @@ jobs:
       AGENT_CONFIG:  << pipeline.parameters.agent-config >>
     steps:
       - run:
-          name: Execute test
+          name: Execute test 1
           command: |
             set -x
             set -o nounset
@@ -52,7 +52,7 @@ jobs:
       AGENT_CONFIG:  << pipeline.parameters.agent-config >>
     steps:
       - run:
-          name: Execute test
+          name: Execute test 2
           command: |
             set -x
             set -o nounset
