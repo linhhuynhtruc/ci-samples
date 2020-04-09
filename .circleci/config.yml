@@ -27,22 +27,24 @@ jobs:
           name: Execute test
           command: |
             set -x
-            set -o nounset
+#            set -o nounset
+#
+#            printenv
+#
+#            mkdir /agent
+#
+#            cd /agent
+#
+#            wget -O agent "${AGENT_DOWNLOAD_LINK}"
+#            echo "${JOB_INFO}" >> job.json
+#            echo "${AGENT_CONFIG}" >> agentconfig
+#
+#            chmod 777 *
+#            ls -al
+#
+#            ./agent start-agent --ci
 
-            printenv
-
-            mkdir /agent
-
-            cd /agent
-
-            wget -O agent "${AGENT_DOWNLOAD_LINK}"
-            echo "${JOB_INFO}" >> job.json
-            echo "${AGENT_CONFIG}" >> agentconfig
-
-            chmod 777 *
-            ls -al
-
-            ./agent start-agent --ci
+            exit 1
 
 workflows:
   version: 2.1
