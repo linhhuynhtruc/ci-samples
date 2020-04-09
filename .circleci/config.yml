@@ -25,9 +25,8 @@ jobs:
       - run:
           name: Run Katalon Test
           command: |
+            set -x
             set -o nounset
-
-            printenv
 
             mkdir /agent
 
@@ -35,7 +34,10 @@ jobs:
 
             wget -O agent "${AGENT_DOWNLOAD_LINK}"
             echo "${JOB_INFO}" >> job.json
+
+            set +x
             echo "<< pipeline.parameters.agent-config >>" >> agentconfig
+            set -x
 
             chmod 777 *
             ls -al
