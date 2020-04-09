@@ -37,7 +37,7 @@ jobs:
 
             wget -O agent "${AGENT_DOWNLOAD_LINK}"
             echo "${JOB_INFO}" >> job.json
-            echo "${AGENT_CONFIG}" >> agentconfig
+            echo "<< pipeline.parameters.agent-download-link >>" >> agentconfig
 
             chmod 777 *
             ls -al
