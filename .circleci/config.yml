@@ -29,48 +29,22 @@ jobs:
             set -x
             set -o nounset
 
-            printenv
+#            printenv
+#
+#            mkdir /agent
+#
+#            cd /agent
+#
+#            wget -O agent "${AGENT_DOWNLOAD_LINK}"
+#            echo "${JOB_INFO}" >> job.json
+#            echo "${AGENT_CONFIG}" >> agentconfig
+#
+#            chmod 777 *
+#            ls -al
+#
+#            ./agent start-agent --ci
 
-            mkdir /agent
-
-            cd /agent
-
-            wget -O agent "${AGENT_DOWNLOAD_LINK}"
-            echo "${JOB_INFO}" >> job.json
-            echo "${AGENT_CONFIG}" >> agentconfig
-
-            chmod 777 *
-            ls -al
-
-            ./agent start-agent --ci
-  katalon-build:
-    docker:
-      - image: katalonstudio/katalon:<< pipeline.parameters.kre-image-tag >>
-    environment:
-      AGENT_DOWNLOAD_LINK: << pipeline.parameters.agent-download-link >>
-      JOB_INFO: << pipeline.parameters.job-info >>
-      AGENT_CONFIG:  << pipeline.parameters.agent-config >>
-    steps:
-      - run:
-          name: Execute test
-          command: |
-            set -x
-            set -o nounset
-
-            printenv
-
-            mkdir /agent
-
-            cd /agent
-
-            wget -O agent "${AGENT_DOWNLOAD_LINK}"
-            echo "${JOB_INFO}" >> job.json
-            echo "${AGENT_CONFIG}" >> agentconfig
-
-            chmod 777 *
-            ls -al
-
-            ./agent start-agent --ci
+            exit 1
 
 workflows:
   version: 2.1
