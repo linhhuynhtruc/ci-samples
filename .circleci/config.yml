@@ -21,7 +21,6 @@ jobs:
     environment:
       AGENT_DOWNLOAD_LINK: << pipeline.parameters.agent-download-link >>
       JOB_INFO: << pipeline.parameters.job-info >>
-      AGENT_CONFIG:  << pipeline.parameters.agent-config >>
     steps:
       - run:
           name: Execute test
@@ -37,7 +36,7 @@ jobs:
 
             wget -O agent "${AGENT_DOWNLOAD_LINK}"
             echo "${JOB_INFO}" >> job.json
-            echo "<< pipeline.parameters.agent-download-link >>" >> agentconfig
+            echo "<< pipeline.parameters.agent-config >>" >> agentconfig
 
             chmod 777 *
             ls -al
