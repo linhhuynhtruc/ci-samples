@@ -15,7 +15,7 @@ parameters:
     default: ""
 
 jobs:
-  katalon-test:
+  build:
     docker:
       - image: katalonstudio/katalon:<< pipeline.parameters.kre-image-tag >>
     environment:
