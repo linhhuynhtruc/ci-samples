@@ -23,9 +23,8 @@ jobs:
       JOB_INFO: << pipeline.parameters.job-info >>
     steps:
       - run:
-          name: Execute test
+          name: Run Katalon Test
           command: |
-            set -x
             set -o nounset
 
             printenv
