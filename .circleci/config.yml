@@ -43,3 +43,9 @@ jobs:
             ls -al
 
             ./agent start-agent --ci
+
+workflows:
+  version: 2.1
+  build_and_test:
+    jobs:
+      - katalon-test
