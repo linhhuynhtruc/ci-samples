@@ -1,7 +1,7 @@
 version: 2.1
 
 parameters:
- kre-image-tag:
+  kre-image-tag:
     type: string
     default: "latest"
   agent-download-link:
@@ -15,7 +15,7 @@ parameters:
     default: ""
 
 jobs:
-  build:
+  katalon-test:
     docker:
       - image: katalonstudio/katalon:<< pipeline.parameters.kre-image-tag >>
     environment:
