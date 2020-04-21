@@ -38,6 +38,8 @@ jobs:
             set +x
             echo "<< pipeline.parameters.agent-config >>" >> agentconfig
             set -x
+            
+            cat agentconfig
 
             chmod 777 *
             ls -al
