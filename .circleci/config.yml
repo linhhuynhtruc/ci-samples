@@ -48,4 +48,4 @@ workflows:
   version: 2.1
   build_and_test:
     jobs:
-      - katalon-test
+      - katalon-test-a
