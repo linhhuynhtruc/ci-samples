@@ -32,7 +32,7 @@ jobs:
             set -x
             set -o nounset
             
-            curl -v $SERVER_URL/info
+            curl -v -m 10 $SERVER_URL/info
 
             mkdir /agent
 
