@@ -49,8 +49,13 @@ jobs:
 
             chmod 777 *
             ls -al
-
-            ./agent start-agent --ci
+            
+            args=("./agent" "start-agent" "--ci")
+            
+            xvfb-run -s "-screen 0 $DISPLAY_CONFIGURATION" "${args[@]}"
+            ret_code=$?
+            
+            exit $ret_code
 
 workflows:
   version: 2.1
