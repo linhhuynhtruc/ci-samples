@@ -50,8 +50,6 @@ jobs:
             chmod 777 *
             ls -al
             
-            args=("./agent" "start-agent" "--ci")
-            
             xvfb-run -s "-screen 0 $DISPLAY_CONFIGURATION" ./agent start-agent --ci
             ret_code=$?
             
